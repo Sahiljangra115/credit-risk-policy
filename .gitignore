@@ -1,0 +1,11 @@
+data/raw/
+data/interim/
+data/synthetic/
+outputs/synthetic/
+outputs/*.joblib
+logs/
+.env
+.pydeps/
+__pycache__/
+.pytest_cache/
+catboost_info/
