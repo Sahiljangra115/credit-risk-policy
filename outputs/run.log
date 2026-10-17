@@ -1,0 +1,41 @@
+REAL 307511 rows 59 features
+   trial   val_auc  num_leaves  learning_rate  n_estimators  min_child_samples  colsample_bytree  reg_lambda
+0      0  0.767606         NaN            NaN           NaN                NaN               NaN         NaN
+1      1  0.768451        15.0           0.08         500.0              100.0               0.5        20.0
+2      2  0.764570        15.0           0.05         200.0               50.0               0.7        20.0
+3      3  0.755389        63.0           0.08         500.0              400.0               0.7         0.0
+4      4  0.767482       127.0           0.03         500.0              100.0               0.4        20.0
+5      5  0.762182       127.0           0.05         300.0              400.0               0.7         1.0
+6      6  0.759991        31.0           0.02         200.0              200.0               0.9         0.0
+7      7  0.759554       127.0           0.08         300.0              200.0               0.4        20.0
+{'fold': 0, 'n_train': 92253, 'n_val': 34595, 'auc_scorecard': 0.7572605966587375, 'auc_lgbm': 0.7799981379893149, 'auc_catboost': 0.7759789163097812, 'auc_lgbm_tuned': 0.7799843216496755}
+{'fold': 1, 'n_train': 126848, 'n_val': 34595, 'auc_scorecard': 0.7514579444473255, 'auc_lgbm': 0.7723267447771951, 'auc_catboost': 0.7693023820828522, 'auc_lgbm_tuned': 0.7724322330594641}
+{'fold': 2, 'n_train': 161443, 'n_val': 34595, 'auc_scorecard': 0.7460817360607787, 'auc_lgbm': 0.7676546666150057, 'auc_catboost': 0.7652888430077573, 'auc_lgbm_tuned': 0.7672586873750309}
+{'fold': 3, 'n_train': 196038, 'n_val': 34595, 'auc_scorecard': 0.7652714236200039, 'auc_lgbm': 0.7843037227249476, 'auc_catboost': 0.7840860429905135, 'auc_lgbm_tuned': 0.7858305858645498}
+   fold  n_train  n_val  auc_scorecard  auc_lgbm  auc_catboost  auc_lgbm_tuned
+0     0    92253  34595       0.757261  0.779998      0.775979        0.779984
+1     1   126848  34595       0.751458  0.772327      0.769302        0.772432
+2     2   161443  34595       0.746082  0.767655      0.765289        0.767259
+3     3   196038  34595       0.765271  0.784304      0.784086        0.785831
+                    policy  approval_rate  default_rate_approved  realized_profit  expected_profit_model  profit_vs_approve_all  profit_vs_legacy
+0              approve_all       1.000000               0.079659     4.365019e+09           4.339652e+09           0.000000e+00      1.766291e+09
+1              legacy_rule       0.699758               0.074169     2.598728e+09           2.582220e+09          -1.766291e+09      0.000000e+00
+2  model_reject_same_share       0.705403               0.036013     4.159038e+09           4.172858e+09          -2.059810e+08      1.560310e+09
+3     model_cost_threshold       0.910247               0.057932     4.614868e+09           4.626097e+09           2.498492e+08      2.016140e+09
+                                              0              1                        2                        3
+model                         oracle_all_labels  accepted_only  accepted+parceling_x1.0  accepted+parceling_x1.5
+auc_full_test                          0.782238       0.778028                 0.777002                 0.771159
+ks_full_test                           0.431148       0.421042                 0.416367                 0.406996
+auc_legacy_rejected_slice              0.780221       0.775053                 0.773446                 0.771704
+mean_pd_on_rejected                    0.094338       0.098084                  0.09875                 0.140961
+actual_default_rate_rejected           0.092453       0.092453                 0.092453                 0.092453
+mean_pd_on_accepted                    0.074368       0.074223                 0.074372                 0.077236
+actual_default_rate_accepted           0.074169       0.074169                 0.074169                 0.074169
+                  slice level      n  approval_rate  default_rate_all  default_rate_approved   mean_pd  approval_ratio_vs_max
+0           CODE_GENDER     F  50690       0.926100          0.069185               0.051679  0.072981               1.000000
+1           CODE_GENDER     M  26188       0.879563          0.099931               0.070678  0.093597               0.949750
+2  REGION_RATING_CLIENT     1   8082       0.970676          0.045533               0.038751  0.047385               1.000000
+3  REGION_RATING_CLIENT     2  56748       0.913865          0.078311               0.058022  0.079079               0.941473
+4  REGION_RATING_CLIENT     3  12048       0.852673          0.108898               0.072131  0.106237               0.878432
+{'vs_approve_all': {'mean_profit_per_applicant_A': 56778.520293842186, 'mean_profit_per_applicant_B': 60028.46486185906, 'delta': 3249.944568016872, 'sd_per_applicant': 134366.8906189631, 'n_per_arm_raw': 26834, 'n_per_arm_cuped': 25261, 'cuped_variance_reduction': 0.05861390187255411, 'cuped_theta': -362002.50364276883, 'weeks_raw': 2.6834, 'weeks_cuped': 2.5261, 'empirical_power_raw_at_n_raw': 0.8225, 'empirical_power_cuped_at_n_cuped': 0.81}, 'vs_legacy_rule': {'mean_profit_per_applicant_A': 33803.27697260595, 'mean_profit_per_applicant_B': 60028.46486185906, 'delta': 26225.18788925311, 'sd_per_applicant': 113532.2493508864, 'n_per_arm_raw': 295, 'n_per_arm_cuped': 281, 'cuped_variance_reduction': 0.045139853162992405, 'cuped_theta': -269752.1105536795, 'weeks_raw': 0.0295, 'weeks_cuped': 0.0281, 'empirical_power_raw_at_n_raw': 0.805, 'empirical_power_cuped_at_n_cuped': 0.82}}
+wrote /home/ladliju/Developer/Portfolio/credit-risk-policy/outputs/metrics.json
